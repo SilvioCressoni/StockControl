@@ -1,24 +1,28 @@
 ﻿<Properties StartupConfiguration="{7388B9E7-9C0B-4631-8713-5EA49E9B365A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StockControl/Models/Enum/StockSector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StockControl/appsettings.json">
     <Files>
-      <File FileName="StockControl/Models/Operation.cs" Line="24" Column="1" />
-      <File FileName="StockControl/Models/TypeOperation.cs" Line="11" Column="1" />
-      <File FileName="StockControl/Models/Enum/StatusOperation.cs" Line="10" Column="1" />
-      <File FileName="StockControl/Models/TaxOperation.cs" Line="11" Column="50" />
-      <File FileName="StockControl/Models/Stock.cs" Line="15" Column="1" />
-      <File FileName="StockControl/Models/Enum/StockSector.cs" Line="6" Column="9" />
+      <File FileName="StockControl/Models/Operation.cs" Line="31" Column="35" />
+      <File FileName="StockControl/Models/Enum/StatusOperation.cs" />
+      <File FileName="StockControl/Models/TaxOperation.cs" Line="28" Column="43" />
+      <File FileName="StockControl/Models/Stock.cs" Line="7" Column="23" />
+      <File FileName="StockControl/Models/Enum/StockSector.cs" />
+      <File FileName="StockControl/Startup.cs" Line="1" Column="1" />
+      <File FileName="StockControl/appsettings.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StockControl" expanded="True">
             <Node name="StockControl" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="Enum" expanded="True">
-                  <Node name="StockSector.cs" selected="True" />
-                </Node>
+                <Node name="Enum" expanded="True" />
               </Node>
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Operations" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" selected="True" />
             </Node>
           </Node>
         </State>
@@ -27,7 +31,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.StockControl FirstBuild="True" PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.ItemProperties.StockControl PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
