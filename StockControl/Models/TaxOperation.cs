@@ -17,7 +17,7 @@ namespace StockControl.Models
         }
 
         public TaxOperation(int id, double valorCblc, double valorEmolumentos, double valorCorretagem,
-            double valorIss, double valorIrrf, double valorTotalTax)
+            double valorIss, double valorIrrf)
         {
             Id = id;
             ValorCblc = valorCblc;
@@ -25,7 +25,6 @@ namespace StockControl.Models
             ValorCorretagem = valorCorretagem;
             ValorIss = valorIss;
             ValorIrrf = valorIrrf;
-            ValorTotalTax = valorTotalTax;
       
         }
     }

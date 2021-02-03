@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using StockControl.Models;
+using StockControl.Data;
+using StockControl.Models.ViewModel;
 
 namespace StockControl.Controllers
 {

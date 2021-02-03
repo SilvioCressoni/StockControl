@@ -1,5 +1,5 @@
 ﻿
-namespace StockControl.Models
+namespace StockControl.Models.Enum
 {
     public enum TypeOperation : int
     {

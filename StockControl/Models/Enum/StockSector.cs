@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 namespace StockControl.Models.Enum
 {
     public enum StockSector : int
@@ -10,6 +10,7 @@ namespace StockControl.Models.Enum
         Retail = 4,
         Telecom = 5,
         Technology = 6,
-        Health = 7
+        Health = 7,
+        Educational = 8
     }
 }

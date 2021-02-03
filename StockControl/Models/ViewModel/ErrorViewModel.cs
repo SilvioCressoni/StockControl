@@ -1,10 +1,9 @@
-using System;
-
-namespace StockControl.Models
+namespace StockControl.Models.ViewModel
 {
     public class ErrorViewModel
     {
         public string RequestId { get; set; }
+        public string Message { get; set; }
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
