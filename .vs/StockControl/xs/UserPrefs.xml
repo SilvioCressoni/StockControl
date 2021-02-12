@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{7388B9E7-9C0B-4631-8713-5EA49E9B365A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StockControl/Views/Operations/Edit.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StockControl/Views/Operations/Details.cshtml">
     <Files>
       <File FileName="StockControl/Models/Operation.cs" Line="13" Column="52" />
       <File FileName="StockControl/Models/Enum/StockSector.cs" />
@@ -13,6 +13,7 @@
       <File FileName="StockControl/Startup.cs" />
       <File FileName="StockControl/Data/SeedingServices.cs" />
       <File FileName="StockControl/Views/Shared/Error.cshtml" />
+      <File FileName="StockControl/Views/Operations/Details.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,7 +28,7 @@
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Operations" expanded="True">
-                  <Node name="Edit.cshtml" selected="True" />
+                  <Node name="Details.cshtml" selected="True" />
                 </Node>
                 <Node name="Shared" expanded="True" />
               </Node>
