@@ -1,10 +1,11 @@
 @model IEnumerable<StockControl.Models.Operation>
 
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Operations";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -18,6 +19,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Corretora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TypeOperation)
@@ -44,6 +51,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Corretora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TypeOperation)

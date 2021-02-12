@@ -1,52 +1,80 @@
 @model StockControl.Models.Operation
+    
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Operation";
 }
 
 <h1>Create</h1>
 
-<h4>Operation</h4>
+<h4>@ViewData["Title"]</h4>     
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DateTrade" class="control-label"></label>
                 <input asp-for="DateTrade" class="form-control" />
                 <span asp-validation-for="DateTrade" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Corretora" class="control-label"></label>
                 <input asp-for="Corretora" class="form-control" />
                 <span asp-validation-for="Corretora" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+
+            <!--
+    <div class="form-group">
+        <label asp-for="Operation.Stock" class="control-label"></label>
+        <select asp-for="Operation.Id" asp-items="(new SelectList(Model.Stock, "Id", "StockName"))" class="form-control"></select>
+    </div>
+    -->
+
+            <div class="form-group">
+                <label asp-for="Stock" class="control-label"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="TypeOperation" class="control-label"></label>
-                <select asp-for="TypeOperation" class="form-control"></select>
+                <input asp-for="TypeOperation" class="form-control" />
                 <span asp-validation-for="TypeOperation" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Amount" class="control-label"></label>
                 <input asp-for="Amount" class="form-control" />
                 <span asp-validation-for="Amount" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="ValorUnit" class="control-label"></label>
                 <input asp-for="ValorUnit" class="form-control" />
                 <span asp-validation-for="ValorUnit" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="ValorTotalTraded" class="control-label"></label>
                 <input asp-for="ValorTotalTraded" class="form-control" />
                 <span asp-validation-for="ValorTotalTraded" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="StatusOperation" class="control-label"></label>
-                <select asp-for="StatusOperation" class="form-control"></select>
+                <input asp-for="StatusOperation" class="form-control" />
                 <span asp-validation-for="StatusOperation" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

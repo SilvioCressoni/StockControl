@@ -11,8 +11,6 @@ using StockControl.Models;
         }
 
         public DbSet<Operation> Operation { get; set; }
-        public DbSet<Stock> Stock { get; set; }
-        public DbSet<TaxOperation> TaxOperation { get; set; }
 
     }
 
