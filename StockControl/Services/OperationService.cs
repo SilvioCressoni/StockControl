@@ -54,5 +54,13 @@ namespace StockControl.Services
 
         }
 
+        public void Remove(int id)
+        {
+            var obj = _context.Operation.Find(id);
+            _context.Operation.Remove(obj);
+
+            _context.SaveChanges();
+        }
+
     }
 }

@@ -59,19 +59,36 @@ namespace StockControl.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
-        public IActionResult Edit(int? id)
+        public IActionResult Details(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
-                //    return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
             }
 
             var obj = _operationService.FindById(id.Value);
             if (obj == null)
             {
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = "id not found" });
+            }
+
+            return View(obj);
+
+
+        }
+
+        public IActionResult Edit(int? id)
+        {
+            if(id == null)
+            {
+               return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
+                
+            }
+
+            var obj = _operationService.FindById(id.Value);
+            if (obj == null)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
             }
 
             return View(obj);
@@ -84,9 +101,8 @@ namespace StockControl.Controllers
         {
             if (id != operation.Id)
             {
-                //return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
+               return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
 
-                return BadRequest();
             }
 
             try
@@ -97,9 +113,47 @@ namespace StockControl.Controllers
             }
             catch (ApplicationException e)
             {
-                //return RedirectToAction(nameof(Error), new { message = e.Message });
-                return BadRequest();
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+                
             }
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
+            }
+
+            var obj = _operationService.FindById(id.Value);
+            if (id == null)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id not found" });
+            }
+
+            return View(obj);
+
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _operationService.Remove(id);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Error(string message)
+        {
+
+            var viewModel = new ErrorViewModel
+            {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+
+            return View(viewModel);
         }
     }
 }
