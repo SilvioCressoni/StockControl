@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using StockControl.Data;
 using StockControl.Models;
+using StockControl.Services.Exceptions;
 
 namespace StockControl.Services
 {
@@ -16,50 +18,53 @@ namespace StockControl.Services
             _context = context;
         }
 
-        public List<Operation> FindAll()
+        public async Task<List<Operation>> FindAllAsync()
         {
-            return _context.Operation.ToList();
+            return await _context.Operation.ToListAsync();
         }
 
-        public Operation FindById(int id)
+        public async Task<Operation> FindByIdAsync(int id)
         {
 
-            return _context.Operation.FirstOrDefault(oper => oper.Id == id);
+            return await _context.Operation.FirstOrDefaultAsync(oper => oper.Id == id);
         }
 
-        public void Insert(Operation operation)
+        public async Task InsertAsync(Operation operation)
         {
-            _context.Operation.Add(operation);
+            // this command just save in memory 
+            _context.Add(operation);
 
-            _context.SaveChanges();
+            // this one at truth saving on Database and needs to be included Async and await
+            await _context.SaveChangesAsync();
         }
 
-        public void Update(Operation operation)
+        public async Task UpdateAsync(Operation operation)
         {
 
-            if(!_context.Operation.Any(x => x.Id == operation.Id ))
+            var hasAny = await _context.Operation.AnyAsync(x => x.Id == operation.Id);
+            if(!hasAny)
             {
-                return;
+                throw new NotFoundException("Id not Found");
             }
 
             try
             {
                 _context.Update(operation);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException e)
             {
-                return;
+                throw new DbConcurrencyException(e.Message);
             }
 
         }
 
-        public void Remove(int id)
+        public async Task RemoveAsync(int id)
         {
             var obj = _context.Operation.Find(id);
             _context.Operation.Remove(obj);
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
     }

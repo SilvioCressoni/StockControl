@@ -1,25 +1,16 @@
 ﻿<Properties StartupConfiguration="{7388B9E7-9C0B-4631-8713-5EA49E9B365A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StockControl/Controllers/OperationsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StockControl/Views/Operations/Index.cshtml">
     <Files>
-      <File FileName="StockControl/Services/OperationService.cs" Line="62" Column="36" />
-      <File FileName="StockControl/Views/Operations/Index.cshtml" />
-      <File FileName="StockControl/Views/Operations/Create.cshtml" />
-      <File FileName="StockControl/Views/Operations/Delete.cshtml" />
-      <File FileName="StockControl/Controllers/OperationsController.cs" Line="139" Column="39" />
-      <File FileName="StockControl/Views/Operations/Edit.cshtml" />
-      <File FileName="StockControl/Data/SeedingServices.cs" />
-      <File FileName="StockControl/Views/Operations/Details.cshtml" />
-      <File FileName="StockControl/Views/Shared/_Layout.cshtml" />
-      <File FileName="StockControl/wwwroot/css/site.css" />
+      <File FileName="StockControl/Controllers/OperationsController.cs" Line="138" Column="19" />
+      <File FileName="StockControl/Services/OperationService.cs" Line="53" Column="23" />
+      <File FileName="StockControl/Views/Operations/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StockControl" expanded="True">
             <Node name="StockControl" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="OperationsController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="Enum" expanded="True" />
@@ -28,7 +19,9 @@
               <Node name="Services" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Operations" expanded="True" />
+                <Node name="Operations" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
                 <Node name="Shared" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">

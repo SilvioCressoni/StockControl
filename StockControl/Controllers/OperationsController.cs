@@ -26,9 +26,9 @@ namespace StockControl.Controllers
         }
 
         // GET: Operations
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var list = _operationService.FindAll();
+            var list = await _operationService.FindAllAsync();
 
             return View(list);
         }
@@ -46,7 +46,7 @@ namespace StockControl.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Operation operation)
+        public async Task<IActionResult> CreateAsync(Operation operation)
         {
         //    if (!ModelState.IsValid)
         //    {
@@ -54,19 +54,19 @@ namespace StockControl.Controllers
         //        return View();
         //    }
 
-            _operationService.Insert(operation);
+            await _operationService.InsertAsync(operation);
 
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Details(int? id)
+        public async Task<IActionResult> DetailsAsync(int? id)
         {
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
             }
 
-            var obj = _operationService.FindById(id.Value);
+            var obj = await _operationService.FindByIdAsync(id.Value);
             if (obj == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "id not found" });
@@ -77,7 +77,7 @@ namespace StockControl.Controllers
 
         }
 
-        public IActionResult Edit(int? id)
+        public async Task<IActionResult> EditAsync(int? id)
         {
             if(id == null)
             {
@@ -85,7 +85,7 @@ namespace StockControl.Controllers
                 
             }
 
-            var obj = _operationService.FindById(id.Value);
+            var obj = await _operationService.FindByIdAsync(id.Value);
             if (obj == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "Id not found" });
@@ -97,7 +97,7 @@ namespace StockControl.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, Operation operation)
+        public async Task<IActionResult> EditAsync(int id, Operation operation)
         {
             if (id != operation.Id)
             {
@@ -107,7 +107,7 @@ namespace StockControl.Controllers
 
             try
             {
-                _operationService.Update(operation);
+                await _operationService.UpdateAsync(operation);
                 return RedirectToAction(nameof(Index));
                 
             }
@@ -118,14 +118,14 @@ namespace StockControl.Controllers
             }
         }
 
-        public IActionResult Delete(int? id)
+        public async Task<IActionResult> DeleteAsync(int? id)
         {
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
             }
 
-            var obj = _operationService.FindById(id.Value);
+            var obj = await _operationService.FindByIdAsync(id.Value);
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "Id not found" });
@@ -137,9 +137,9 @@ namespace StockControl.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            _operationService.Remove(id);
+           await _operationService.RemoveAsync(id);
 
             return RedirectToAction(nameof(Index));
         }
